@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+
+namespace učím_se_programming
+{
+    public class Program
+    {
+
+
+
+        public static void Main(string[] args)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            Console.Title = "Nejmenší společný násobek";
+
+        Label2:
+            /////dotnet publish -c Release -r win10-x64 -p:PublishSingleFile=true -p:PublishTrimmed=true 
+            Console.WriteLine("Zadejte první číslo. Pokud chcete nechat prázdné, zadejte 1.");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Zadejte druhé číslo");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Zadejte třetí číslo");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= num1 * num2 * num3; i++)
+            {
+                if (i % num1 == 0 && i % num2 == 0 && i % num3 == 0)
+                {
+                    Console.WriteLine("Hledaný násobek je " + i);
+                    goto Label1;
+                }
+
+            }
+        Label1:
+            Console.WriteLine("Chcete pokračovat?");
+            Console.WriteLine("\n\n");
+            Console.ReadKey();
+            goto Label2;
+
+
+
+
+        }
+
+
+
+    }
+}
+
